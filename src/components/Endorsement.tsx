@@ -3,7 +3,7 @@ import svgPaths from "@/imports/svg-vh0hpqcl1w";
 export function Endorsement() {
   return (
     <section className="bg-white">
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16 py-10">
+      <div className="max-w-360 mx-auto px-8 md:px-16 py-10">
         <p className="font-['Inter',sans-serif] font-medium text-[14px] tracking-[1px] uppercase text-[#6b7280] text-center mb-6">
           Trusted by Leading Organizations Across Nigeria
         </p>

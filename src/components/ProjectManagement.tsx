@@ -265,9 +265,6 @@ export function ProjectManagement() {
                   <div className="bg-[#0f1e2e] flex items-center justify-center size-24">
                     {phase.icon}
                   </div>
-                  {i < phases.length - 1 && (
-                    <div className="hidden md:block absolute top-12 left-[60%] w-full h-px bg-[#d6dadf]" />
-                  )}
                 </div>
                 <p className="font-['Inter',sans-serif] font-semibold text-[16px] text-[#0f1e2e] text-center">
                   {phase.label}

@@ -27,11 +27,11 @@ export function Hero() {
 
   return (
     <section id="hero" className="bg-[#0f1e2e] border-b border-[#d6dadf]">
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16 py-16 md:py-20 lg:py-24">
+      <div className="max-w-360 mx-auto px-8 md:px-16 py-16 md:py-20 lg:py-24">
         <div className="flex flex-col lg:flex-row gap-10 items-center">
           {/* Left — text content */}
           <motion.div
-            className="flex flex-col gap-10 w-full lg:w-[616px] lg:flex-shrink-0"
+            className="flex flex-col gap-10 w-full lg:w-154 lg:shrink-0"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -45,7 +45,7 @@ export function Hero() {
               </h1>
             </div>
 
-            <p className="font-['Inter',sans-serif] font-normal text-[18px] leading-[1.75] text-white/80 max-w-[526px]">
+            <p className="font-['Inter',sans-serif] font-normal text-[18px] leading-[1.75] text-white/80 max-w-131.5">
               Indigenous telecommunications, power, and engineering services
               company delivering reliable solutions across Nigeria.
             </p>
@@ -53,7 +53,7 @@ export function Hero() {
             <div className="flex flex-row gap-5 items-center flex-wrap">
               <button
                 onClick={() => scrollTo("#contact")}
-                className="bg-white hover:bg-[#f0f0f0] text-[#0f1e2e] font-['Inter',sans-serif] font-semibold text-[16px] h-[48px] px-6 rounded-[6px] flex items-center gap-2 transition-colors duration-200 flex-shrink-0"
+                className="bg-white hover:bg-[#f0f0f0] text-[#0f1e2e] font-['Inter',sans-serif] font-semibold text-[16px] h-12 px-6 rounded-[6px] flex items-center gap-2 transition-colors duration-200 shrink-0"
               >
                 Contact Us
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -75,7 +75,7 @@ export function Hero() {
               </button>
               <button
                 onClick={() => scrollTo("#services")}
-                className="bg-[#0f1e2e] border-2 border-white text-white font-['Inter',sans-serif] font-semibold text-[16px] h-[52px] px-8 rounded-[6px] hover:bg-white/10 transition-colors duration-200 flex-shrink-0"
+                className="bg-[#0f1e2e] border-2 border-white text-white font-['Inter',sans-serif] font-semibold text-[16px] h-13 px-8 rounded-[6px] hover:bg-white/10 transition-colors duration-200 shrink-0"
               >
                 View Services
               </button>
@@ -94,7 +94,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             {/* Slide frame */}
-            <div className="relative w-full aspect-[616/553] rounded-[12px] overflow-hidden bg-[#0d1a27]">
+            <div className="relative w-full aspect-616/553 rounded-2xl overflow-hidden bg-[#0d1a27]">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={current}

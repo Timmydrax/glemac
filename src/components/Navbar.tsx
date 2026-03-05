@@ -5,8 +5,8 @@ import svgPaths from "@/imports/svg-vh0hpqcl1w";
 
 function GlemacLogoIcon() {
   return (
-    <div className="bg-[#0f1e2e] flex items-center justify-center rounded-[8px] size-[32px] flex-shrink-0">
-      <svg className="size-[24px]" fill="none" viewBox="0 0 24 24">
+    <div className="bg-[#0f1e2e] flex items-center justify-center rounded-xl size-8 shrink-0">
+      <svg className="size-6" fill="none" viewBox="0 0 24 24">
         <g>
           <path
             d={svgPaths.p1853ca00}
@@ -74,16 +74,16 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/[0.08]">
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16">
-        <div className="flex items-center justify-between h-[68px] md:h-[76px]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/8">
+      <div className="max-w-360 mx-auto px-8 md:px-16">
+        <div className="flex items-center justify-between h-17 md:h-19">
           {/* Logo */}
           <button
             onClick={() => {
               scrollTo("#hero");
               setMobileOpen(false);
             }}
-            className="flex items-center gap-[6px]"
+            className="flex items-center gap-1.5"
           >
             <GlemacLogoIcon />
             <span className="font-['Domine',serif] font-bold text-[20px] tracking-[-0.5px] text-[#0f1e2e] leading-none">
@@ -97,9 +97,9 @@ export function Navbar() {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className={`relative font-['DM_Sans',sans-serif] font-medium text-[15px] pb-[2px] transition-colors duration-200 ${
+                className={`relative font-['DM_Sans',sans-serif] font-medium text-[15px] pb-0.5 transition-colors duration-200 ${
                   active === link.href
-                    ? "text-[#0f1e2e] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#0f1e2e]"
+                    ? "text-[#0f1e2e] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#0f1e2e]"
                     : "text-[#1f2a2e] hover:text-[#0f1e2e]"
                 }`}
               >
@@ -112,7 +112,7 @@ export function Navbar() {
           <div className="hidden md:block">
             <button
               onClick={() => scrollTo("#contact")}
-              className="bg-[#0f1e2e] hover:bg-[#1a2e42] text-white font-['DM_Sans',sans-serif] font-medium text-[15px] h-[40px] px-5 rounded-[4px] transition-colors duration-200"
+              className="bg-[#0f1e2e] hover:bg-[#1a2e42] text-white font-['DM_Sans',sans-serif] font-medium text-[15px] h-10 px-5 rounded-lg transition-colors duration-200"
             >
               Get Started
             </button>
@@ -140,7 +140,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-t border-black/[0.08] overflow-hidden"
+            className="md:hidden bg-white border-t border-black/8 overflow-hidden"
           >
             <nav className="flex flex-col px-8 py-4 gap-1">
               {navLinks.map((link) => (
@@ -160,7 +160,7 @@ export function Navbar() {
                   scrollTo("#contact");
                   setMobileOpen(false);
                 }}
-                className="mt-3 bg-[#0f1e2e] text-white font-['DM_Sans',sans-serif] font-medium text-[15px] h-[44px] rounded-[4px]"
+                className="mt-3 bg-[#0f1e2e] text-white font-['DM_Sans',sans-serif] font-medium text-[15px] h-11 rounded-lg"
               >
                 Get Started
               </button>

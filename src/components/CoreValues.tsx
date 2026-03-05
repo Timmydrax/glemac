@@ -117,7 +117,7 @@ const values = [
 export function CoreValues() {
   return (
     <section id="values" className="bg-white border-b border-[#d6dadf]">
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16 py-16 md:py-20 lg:py-24">
+      <div className="max-w-360 mx-auto px-8 md:px-16 py-16 md:py-20 lg:py-24">
         {/* Header */}
         <motion.div
           className="flex flex-col items-center gap-7 mb-20"
@@ -126,8 +126,8 @@ export function CoreValues() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="h-[1px] w-16 bg-[#c5a46d]" />
-          <h2 className="font-['Sora',sans-serif] font-bold text-[40px] leading-[50px] tracking-[-1px] text-[#0f1e2e] text-center">
+          <div className="h-px w-16 bg-[#c5a46d]" />
+          <h2 className="font-['Sora',sans-serif] font-bold text-[40px] leading-12.5 tracking-[-1px] text-[#0f1e2e] text-center">
             Core Values
           </h2>
           <p className="font-['Inter',sans-serif] font-normal text-[18px] text-[#2b2f33] text-center">
@@ -150,7 +150,7 @@ export function CoreValues() {
                 {value.icon}
               </div>
               <div className="text-center flex flex-col gap-3">
-                <p className="font-['Inter',sans-serif] font-semibold text-[16px] leading-[20px] text-[#0f1e2e]">
+                <p className="font-['Inter',sans-serif] font-semibold text-[16px] leading-5 text-[#0f1e2e]">
                   {value.title}
                 </p>
                 <p className="font-['Inter',sans-serif] font-normal text-[14px] leading-[23.8px] text-[#2b2f33]">

@@ -194,7 +194,7 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="bg-white border-b border-[#d6dadf]">
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16 py-16 md:py-20 lg:py-24">
+      <div className="max-w-360 mx-auto px-8 md:px-16 py-16 md:py-20 lg:py-24">
         {/* Header */}
         <motion.div
           className="text-center mb-14"
@@ -203,8 +203,8 @@ export function Services() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="h-[1px] w-16 bg-[#c5a46d] mx-auto mb-8" />
-          <h2 className="font-['Sora',sans-serif] font-bold text-[40px] leading-[50px] tracking-[-1px] text-[#0f1e2e] mb-4">
+          <div className="h-px w-16 bg-[#c5a46d] mx-auto mb-8" />
+          <h2 className="font-['Sora',sans-serif] font-bold text-[40px] leading-12.5 tracking-[-1px] text-[#0f1e2e] mb-4">
             What We Do
           </h2>
           <p className="font-['Inter',sans-serif] font-normal text-[18px] text-[#2b2f33]">
@@ -230,10 +230,10 @@ export function Services() {
               <div className="bg-[rgba(197,164,109,0.05)] flex items-center justify-center size-16 mb-10">
                 {service.icon}
               </div>
-              <h3 className="font-['Inter',sans-serif] font-semibold text-[20px] leading-[25px] text-[#0f1e2e] mb-4">
+              <h3 className="font-['Inter',sans-serif] font-semibold text-[20px] leading-10.5 text-[#0f1e2e] mb-4">
                 {service.title}
               </h3>
-              <p className="font-['Inter',sans-serif] font-normal text-[15px] leading-[26.25px] text-[#2b2f33]">
+              <p className="font-['Inter',sans-serif] font-normal text-[15px] leading-7.5 text-[#2b2f33]">
                 {service.description}
               </p>
             </motion.div>

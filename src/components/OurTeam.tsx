@@ -4,7 +4,7 @@ import svgPaths from "@/imports/svg-vh0hpqcl1w";
 export function OurTeam() {
   return (
     <section id="team" className="bg-white border-b border-[#d6dadf]">
-      <div className="max-w-[1440px] mx-auto px-8 md:px-16 py-16 md:py-20 lg:py-24">
+      <div className="max-w-360 mx-auto px-8 md:px-16 py-16 md:py-20 lg:py-24">
         {/* Header */}
         <motion.div
           className="flex flex-col items-center gap-8 mb-16"
@@ -13,14 +13,14 @@ export function OurTeam() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="h-[1px] w-16 bg-[#c5a46d]" />
-          <h2 className="font-['Sora',sans-serif] font-bold text-[40px] leading-[50px] tracking-[-1px] text-[#0f1e2e] text-center">
+          <div className="h-px w-16 bg-[#c5a46d]" />
+          <h2 className="font-['Sora',sans-serif] font-bold text-[40px] leading-12.50 tracking-[-1px] text-[#0f1e2e] text-center">
             Our Team
           </h2>
         </motion.div>
 
         {/* Content max-width centered */}
-        <div className="max-w-[896px] mx-auto flex flex-col gap-16">
+        <div className="max-w-4xl mx-auto flex flex-col gap-16">
           {/* Two columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             {/* Management */}
@@ -49,10 +49,10 @@ export function OurTeam() {
                   />
                 </svg>
               </div>
-              <h3 className="font-['Inter',sans-serif] font-semibold text-[24px] leading-[30px] text-[#0f1e2e] mb-4">
+              <h3 className="font-['Inter',sans-serif] font-semibold text-[24px] leading-7.5 text-[#0f1e2e] mb-4">
                 Management Team
               </h3>
-              <p className="font-['Inter',sans-serif] font-normal text-[17px] leading-[30.6px] text-[#2b2f33]">
+              <p className="font-['Inter',sans-serif] font-normal text-[17px] leading-7.5 text-[#2b2f33]">
                 Our leadership comprises seasoned professionals with extensive
                 industry experience in engineering, project management, and
                 business operations. Their strategic vision and operational
@@ -93,10 +93,10 @@ export function OurTeam() {
                   />
                 </svg>
               </div>
-              <h3 className="font-['Inter',sans-serif] font-semibold text-[24px] leading-[30px] text-[#0f1e2e] mb-4">
+              <h3 className="font-['Inter',sans-serif] font-semibold text-[24px] leading-7.5 text-[#0f1e2e] mb-4">
                 Technical Expertise
               </h3>
-              <p className="font-['Inter',sans-serif] font-normal text-[17px] leading-[30.6px] text-[#2b2f33]">
+              <p className="font-['Inter',sans-serif] font-normal text-[17px] leading-7.5 text-[#2b2f33]">
                 We maintain a comprehensive database of highly skilled technical
                 personnel across various engineering disciplines. Our team
                 includes certified engineers, technicians, and specialists
