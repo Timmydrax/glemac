@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import React, { useState } from "react";
 import { CheckCircle, Loader, AlertCircle } from "lucide-react";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 import svgPaths from "@/imports/svg-vh0hpqcl1w";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -12,9 +12,9 @@ import svgPaths from "@/imports/svg-vh0hpqcl1w";
 //    {{message}} — set "To Email" to timmydrax@gmail.com
 // 4. Copy your Public Key from Account → API Keys
 // ─────────────────────────────────────────────────────────────────────────────
-const EMAILJS_SERVICE_ID = "service_bqcthbo";
-const EMAILJS_TEMPLATE_ID = "template_gypeeee";
-const EMAILJS_PUBLIC_KEY = "hZRszAPHszojZUM9c";
+// const EMAILJS_SERVICE_ID = "service_bqcthbo";
+// const EMAILJS_TEMPLATE_ID = "template_gypeeee";
+// const EMAILJS_PUBLIC_KEY = "hZRszAPHszojZUM9c";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -28,45 +28,45 @@ export function Contact() {
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus("sending");
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   setStatus("sending");
 
-    const configured =
-      EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY;
+  //   const configured =
+  //     EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY;
 
-    if (!configured) {
-      // Fallback: open mailto
-      const subject = encodeURIComponent(
-        `Enquiry from ${form.name} – Glemac Engineering`,
-      );
-      const body = encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`,
-      );
-      window.open(`mailto:timmydrax@gmail.com?subject=${subject}&body=${body}`);
-      setStatus("success");
-      setForm({ name: "", email: "", message: "" });
-      return;
-    }
+  //   if (!configured) {
+  //     // Fallback: open mailto
+  //     const subject = encodeURIComponent(
+  //       `Enquiry from ${form.name} – Glemac Engineering`,
+  //     );
+  //     const body = encodeURIComponent(
+  //       `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`,
+  //     );
+  //     window.open(`mailto:timmydrax@gmail.com?subject=${subject}&body=${body}`);
+  //     setStatus("success");
+  //     setForm({ name: "", email: "", message: "" });
+  //     return;
+  //   }
 
-    try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: form.message,
-          to_email: "timmydrax@gmail.com",
-        },
-        EMAILJS_PUBLIC_KEY,
-      );
-      setStatus("success");
-      setForm({ name: "", email: "", message: "" });
-    } catch {
-      setStatus("error");
-    }
-  };
+  //   try {
+  //     await emailjs.send(
+  //       EMAILJS_SERVICE_ID,
+  //       EMAILJS_TEMPLATE_ID,
+  //       {
+  //         from_name: form.name,
+  //         from_email: form.email,
+  //         message: form.message,
+  //         to_email: "timmydrax@gmail.com",
+  //       },
+  //       EMAILJS_PUBLIC_KEY,
+  //     );
+  //     setStatus("success");
+  //     setForm({ name: "", email: "", message: "" });
+  //   } catch {
+  //     setStatus("error");
+  //   }
+  // };
 
   return (
     <section
@@ -239,7 +239,11 @@ export function Contact() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-7">
+                <form
+                  action="https://formsubmit.co/timmydrax@gmail.com"
+                  className="flex flex-col gap-7"
+                  method="POST"
+                >
                   {/* Name */}
                   <div className="flex flex-col gap-3">
                     <label className="font-['Inter',sans-serif] font-medium text-[15px] leading-[22.5px] text-[#0f1e2e]">
