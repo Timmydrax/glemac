@@ -13,7 +13,7 @@ export function Contact() {
 
   // Form submission handler for Email (using formsubmit.co)
 
-  const handleEmailSubmit = async (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     const f = formRef.current;
     if (!f) return;
