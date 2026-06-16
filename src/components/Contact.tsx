@@ -597,11 +597,65 @@ import svgPaths from "@/imports/svg-vh0hpqcl1w";
 
 const WHATSAPP_NUMBER = "2349036716225"; // digits only, no + or spaces
 
-type Status = "idle" | "success" | "error";
+type Status = "idle" | "success" | "error" | "sending";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
   const formRef = useRef<HTMLFormElement>(null);
+
+  // Form submission handler for Email (using formsubmit.co)
+
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const f = formRef.current;
+    if (!f) return;
+
+    const name = (
+      f.elements.namedItem("name") as HTMLInputElement
+    ).value.trim();
+    const email = (
+      f.elements.namedItem("email") as HTMLInputElement
+    ).value.trim();
+    const message = (
+      f.elements.namedItem("message") as HTMLTextAreaElement
+    ).value.trim();
+
+    if (!name || !email || !message) {
+      f.reportValidity();
+      return;
+    }
+
+    setStatus("sending");
+
+    try {
+      const res = await fetch(
+        "https://formsubmit.co/ajax/timmydrax@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+            _captcha: "false",
+            _template: "table",
+          }),
+        },
+      );
+
+      if (res.ok) {
+        setStatus("success");
+        f.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
 
   const handleWhatsApp = () => {
     const f = formRef.current;
@@ -799,13 +853,12 @@ export function Contact() {
               ) : (
                 <form
                   ref={formRef}
-                  action="https://formsubmit.co/timmydrax@gmail.com"
-                  method="POST"
+                  onSubmit={handleEmailSubmit}
                   className="flex flex-col gap-7"
                 >
                   {/* Formsubmit config */}
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_template" value="table" />
+                  {/* <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" /> */}
 
                   {/* Name — uncontrolled */}
                   <div className="flex flex-col gap-3">
@@ -882,9 +935,45 @@ export function Contact() {
                     {/* Email — native form POST to formsubmit.co */}
                     <button
                       type="submit"
+                      disabled={status === "sending"}
                       className="py-2 rounded flex-1 bg-[#0f1e2e] hover:bg-[#1a2e42] text-white font-['Inter',sans-serif] font-semibold text-[15px] h-12 flex items-center justify-center gap-2 transition-colors duration-200"
                     >
-                      <svg
+                      {status === "sending" ? (
+                        <>
+                          <svg
+                            className="animate-spin"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+                          </svg>
+                          Sending…
+                        </>
+                      ) : (
+                        <>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                          </svg>
+                          Send Email
+                        </>
+                      )}
+                      {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="18"
                         height="18"
@@ -898,7 +987,7 @@ export function Contact() {
                         <rect width="20" height="16" x="2" y="4" rx="2" />
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                       </svg>
-                      Send Email
+                      Send Email */}
                     </button>
                   </div>
                 </form>
