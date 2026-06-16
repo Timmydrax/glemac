@@ -865,7 +865,7 @@ export function Contact() {
                     <button
                       type="button"
                       onClick={handleWhatsApp}
-                      className="flex-1 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-['Inter',sans-serif] font-semibold text-[15px] h-12 flex items-center justify-center gap-2 transition-colors duration-200"
+                      className="py-2 rounded flex-1 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-['Inter',sans-serif] font-semibold text-[15px] h-12 flex items-center justify-center gap-2 transition-colors duration-200"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -882,7 +882,7 @@ export function Contact() {
                     {/* Email — native form POST to formsubmit.co */}
                     <button
                       type="submit"
-                      className="flex-1 bg-[#0f1e2e] hover:bg-[#1a2e42] text-white font-['Inter',sans-serif] font-semibold text-[15px] h-12 flex items-center justify-center gap-2 transition-colors duration-200"
+                      className="py-2 rounded flex-1 bg-[#0f1e2e] hover:bg-[#1a2e42] text-white font-['Inter',sans-serif] font-semibold text-[15px] h-12 flex items-center justify-center gap-2 transition-colors duration-200"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
